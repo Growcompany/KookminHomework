@@ -1,4 +1,3 @@
-float SmoothPower = 50;
 float duty =0;
 int period =0;
 int count =0;
