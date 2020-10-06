@@ -33,7 +33,6 @@ void setup() {
   timeout = (INTERVAL / 2) * 1000.0; // precalculate pulseIn() timeout value. (unit: us)
   dist_raw = 0.0; // raw distance output from USS (unit: mm)
   scale = 0.001 * 0.5 * SND_VEL;
-  samplenum = SAMPLE_NUM-1;
 
 // initialize serial port
   Serial.begin(57600);
@@ -91,11 +90,6 @@ float USS_measure(int TRIG, int ECHO)
   }
 
   sample[samplenum] =reading;
-
-  for(int i=0; i<3; i++)
-  {
-    Serial.println(sample[i]);
-    }
   
   samplenum +=1;
   
