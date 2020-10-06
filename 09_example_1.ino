@@ -49,8 +49,11 @@ void loop() {
 
 // get a distance reading from the USS
   dist_raw = USS_measure(PIN_TRIG,PIN_ECHO);
-
-  median = (sample[0]+sample[1]+sample[2])/3;
+  for (int i=0; i<SAMPLE_NUM; i++)
+  {
+    median += sample[i];
+  }
+  median = median/SAMPLE_NUM;
 
 // output the read value to the serial port
   Serial.print("Min:0,");
